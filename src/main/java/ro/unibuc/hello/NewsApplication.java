@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import ro.unibuc.hello.data.DonationRepository;
 import ro.unibuc.hello.data.NewsRepository;
 
+
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
@@ -16,6 +17,7 @@ public class NewsApplication {
 	@Autowired
 	private NewsRepository newsRepository;
 	private DonationRepository donationRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(NewsApplication.class, args);
