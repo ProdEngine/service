@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import ro.unibuc.hello.data.NewsRepository;
 
-
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
@@ -15,7 +14,6 @@ public class NewsApplication {
 
 	@Autowired
 	private NewsRepository newsRepository;
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(NewsApplication.class, args);
