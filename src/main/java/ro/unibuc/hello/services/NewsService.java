@@ -21,15 +21,14 @@ public class NewsService {
             List<News> news = new ArrayList<News>();
             if (title == null)
                 newsRepository.findAll().forEach(news::add);
-            else
+            else{
                 newsRepository.findByTitleContaining(title).forEach(news::add);
+            }
             if (news.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
             return new ResponseEntity<>(news, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } catch (Exception e) {return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);}
     }
     public ResponseEntity<News> getNewsById(String id) {
         Optional<News> newsData = newsRepository.findById(id);
@@ -43,9 +42,7 @@ public class NewsService {
         try {
             News _news = newsRepository.save(new News(news.getTitle(), news.getDescription(), news.isPublished()));
             return new ResponseEntity<>(_news, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } catch (Exception e) {return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);}
     }
     public ResponseEntity<News> updateNews(String id,News news) {
         Optional<News> newsData = newsRepository.findById(id);
@@ -63,17 +60,13 @@ public class NewsService {
         try {
             newsRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } catch (Exception e) {return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);}
     }
     public ResponseEntity<HttpStatus> deleteAllNews() {
         try {
             newsRepository.deleteAll();
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } catch (Exception e) {return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);}
     }
     public ResponseEntity<List<News>> findByPublished() {
         try {
@@ -82,8 +75,6 @@ public class NewsService {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
             return new ResponseEntity<>(news, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        } catch (Exception e) {return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);}
     }
 }

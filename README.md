@@ -16,7 +16,7 @@ Follow the [./PREREQUISITES.md](./PREREQUISITES.md) instructions to configure a 
     * If you want to build it from command line and also run unit tests, run: ```./gradlew build```
 * Create an IntelliJ run configuration for a Jar application
     * Add in the configuration the JAR path to the build folder `./build/libs/hello-0.0.1-SNAPSHOT.jar`
-* Start the MongoDB container using docker compose
+* Start the MongoDB container using docker composez
     * ```docker-compose up -d mongo```
 * Run/debug your IntelliJ run configuration
 * Open in your browser:
