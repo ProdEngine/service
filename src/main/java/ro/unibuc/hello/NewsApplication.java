@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import ro.unibuc.hello.data.DonationRepository;
 import ro.unibuc.hello.data.NewsRepository;
 
 
@@ -16,7 +15,6 @@ public class NewsApplication {
 
 	@Autowired
 	private NewsRepository newsRepository;
-	private DonationRepository donationRepository;
 
 
 	public static void main(String[] args) {
