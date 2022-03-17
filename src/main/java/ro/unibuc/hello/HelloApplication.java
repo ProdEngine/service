@@ -25,8 +25,6 @@ public class HelloApplication {
 
 	@PostConstruct
 	public void runAfterObjectCreated() {
-		//donationRepository.deleteAll();
-		//donationRepository.save(new Donation("Sender",0,true));
 		/*informationRepository.deleteAll();
 		informationRepository.save(new InformationEntity("Overview",
 				"This is an example of using a data storage engine running separately from our applications server"));*/
