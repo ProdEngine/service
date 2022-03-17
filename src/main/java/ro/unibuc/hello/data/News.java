@@ -2,6 +2,9 @@ package ro.unibuc.hello.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Objects;
+
 // @Document annotation helps us override the collection name by “news”.
 @Document(collection = "news")
 public class News {
@@ -17,8 +20,12 @@ public class News {
         this.description = description;
         this.published = published;
     }
+
     public String getId() {
         return id;
+    }
+    public void setId(String id){
+        this.id = id;
     }
     public String getTitle() {
         return title;
@@ -39,7 +46,9 @@ public class News {
         this.published = isPublished;
     }
     @Override
-    public String toString() {
-        return "News [id=" + id + ", title=" + title + ", description=" + description + ", published=" + published + "]";
-    }
+    public String toString() {return "News [id=" + id + ", title=" + title + ", description=" + description + ", published=" + published + "]";}
+    @Override
+    public int hashCode() {return Objects.hash(id, title, description, published);}
+
+
 }
