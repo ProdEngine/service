@@ -27,5 +27,6 @@ public class NewsApplication {
 		// newsRepository.deleteAll();
 
 	}
+}
 
 
