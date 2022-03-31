@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### NewsServiceTestIT (I've included this because i've changed the updated news id to "622a439d7701cf69936e3288" since I didn't have the news with the old id. ###
+
+src/test/java/ro/unibuc/hello/services/NewsServiceTestIT.java
