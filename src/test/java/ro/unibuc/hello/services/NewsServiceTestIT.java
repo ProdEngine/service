@@ -40,7 +40,7 @@ public class NewsServiceTestIT {
 
     @Test
     void updateNews(){
-        ResponseEntity<News> result1 = newsService.updateNews("6239be5a0e4cd41dc3d9895b", updatedNews);
+        ResponseEntity<News> result1 = newsService.updateNews("622a439d7701cf69936e3288", updatedNews);
         Assertions.assertEquals(result1.getStatusCode(), HttpStatus.OK);
     }
 
