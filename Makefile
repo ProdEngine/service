@@ -19,7 +19,7 @@ build: clean
 	# all dependencies every time.
 	docker run -v m2:/root/.m2 -v `pwd`:/build $(BUILDER_TAG)
 	# Builds the docker image for running the service.
-	docker build -t hello-img:$(IMAGE_VERSION) .
+	docker build -t $(IMAGE_TAG):$(IMAGE_VERSION) .
 	echo "Success"
 
 
