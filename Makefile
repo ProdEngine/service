@@ -19,8 +19,9 @@ build: clean
 	# all dependencies every time.
 	docker run -v m2:/root/.m2 -v `pwd`:/build $(BUILDER_TAG)
 	# Builds the docker image for running the service.
-	docker build -t $(IMAGE_TAG):$(IMAGE_VERSION) .
+	docker build -t hello-img:$(IMAGE_VERSION) .
 	echo "Success"
 
+
 post-deploy-build:
-	echo "Nothing is defined in post-deploy-build step"
+	echo "Nothing is defined in post-deploy-build step".
