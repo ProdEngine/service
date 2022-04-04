@@ -22,5 +22,6 @@ build: clean
 	docker build -t $(IMAGE_TAG):$(IMAGE_VERSION) .
 	echo "Success"
 
+
 post-deploy-build:
-	echo "Nothing is defined in post-deploy-build step"
+	echo "Nothing is defined in post-deploy-build step".
