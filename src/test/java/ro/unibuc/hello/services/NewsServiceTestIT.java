@@ -2,6 +2,7 @@ package ro.unibuc.hello.services;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,7 @@ import ro.unibuc.hello.data.News;
 import ro.unibuc.hello.data.NewsRepository;
 
 @SpringBootTest
+@Tag("IT")
 public class NewsServiceTestIT {
     @Autowired
     NewsRepository newsRepository;
