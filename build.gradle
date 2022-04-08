@@ -43,6 +43,22 @@ dependencyManagement {
 
 test {
 	outputs.dir snippetsDir
+	useJUnitPlatform {
+		excludeTags ("IT")
+	}
+}
+
+task testIT(type: Test) {
+	outputs.dir snippetsDir
+
+	useJUnitPlatform {
+		includeTags "IT"
+	}
+}
+
+
+test {
+	outputs.dir snippetsDir
 	useJUnitPlatform()
 }
 
