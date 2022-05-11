@@ -1,4 +1,6 @@
 package ro.unibuc.hello.controller;
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,8 @@ public class NewsController {
 
     // ResponseEntity represents the whole HTTP response: status code, headers, and body.
 
+    @Timed(value = "news.getAllNews.time", description = "Time to return all News")
+    @Counted(value = "news.getAllNews.count", description = "Times news have been reurned")
     @GetMapping("/news")
     public ResponseEntity<List<News>> getAllNews(@RequestParam(required = false) String title) {
         return newsService.getAllNews(title);
@@ -31,6 +35,7 @@ public class NewsController {
         return newsService.getNewsById(id);
     }
     @PostMapping("/news")
+    @Counted(value = "news.createdNews.count", description = "Times news have been created")
     public ResponseEntity<News> createNews(@RequestBody News news) {
         return newsService.createNews(news);
     }
