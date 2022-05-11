@@ -1,4 +1,10 @@
 version: '3.1'
+
+networks:
+  default:
+    name: dev
+    driver: bridge
+
 services:
   hello:
     image: arthurelul/hello-img:${IMAGE_TAG}
